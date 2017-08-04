@@ -14,6 +14,7 @@ metadata:
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
   name: {{ template "prometheus.server.fullname" . }}
+  namespace: {{ .Values.namespace }}
 spec:
   accessModes:
 {{ toYaml .Values.server.persistentVolume.accessModes | indent 4 }}

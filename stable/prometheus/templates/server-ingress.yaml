@@ -16,6 +16,7 @@ metadata:
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
   name: {{ template "prometheus.server.fullname" . }}
+  namespace: {{ .Values.namespace }}
 spec:
   rules:
   {{- range .Values.server.ingress.hosts }}

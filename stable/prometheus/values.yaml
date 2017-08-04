@@ -1,4 +1,6 @@
+createnamespace: false
 namespace: monitoring
+
 alertmanager:
   ## If false, alertmanager will not be installed
   ##

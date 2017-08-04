@@ -9,6 +9,7 @@ metadata:
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
   name: {{ template "prometheus.alertmanager.fullname" . }}
+  namespace: {{ .Values.namespace }} 
 data:
 {{ toYaml .Values.alertmanagerFiles | indent 2 }}
 {{- end }}

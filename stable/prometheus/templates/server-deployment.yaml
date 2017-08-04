@@ -8,7 +8,7 @@ metadata:
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
   name: {{ template "prometheus.server.fullname" . }}
-  namespace: "{{ .Values.namespace }}"
+  namespace: {{ .Values.namespace }}
 spec:
   replicas: {{ .Values.server.replicaCount }}
   template:

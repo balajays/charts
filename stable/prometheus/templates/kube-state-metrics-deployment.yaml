@@ -9,7 +9,7 @@ metadata:
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
   name: {{ template "prometheus.kubeStateMetrics.fullname" . }}
-  namespace: "{{ .Values.namespace }}"
+  namespace: {{ .Values.namespace }}
 spec:
   replicas: {{ .Values.kubeStateMetrics.replicaCount }}
   template:

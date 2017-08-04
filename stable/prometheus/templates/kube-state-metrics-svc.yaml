@@ -16,6 +16,7 @@ metadata:
 {{ toYaml .Values.kubeStateMetrics.service.labels | indent 4 }}
 {{- end }}
   name: {{ template "prometheus.kubeStateMetrics.fullname" . }}
+  namespace: {{ .Values.namespace }}
 spec:
 {{- if .Values.kubeStateMetrics.service.clusterIP }}
   clusterIP: {{ .Values.kubeStateMetrics.service.clusterIP }}
