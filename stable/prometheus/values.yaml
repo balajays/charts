@@ -90,7 +90,7 @@ alertmanager:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    # storageClass: "-"
+    storageClass: "fast"
 
     ## Subdirectory of alertmanager data Persistent Volume to mount
     ## Useful if the volume's root directory is not empty
@@ -127,7 +127,8 @@ alertmanager:
     loadBalancerIP: ""
     loadBalancerSourceRanges: []
     servicePort: 80
-    type: ClusterIP
+    #type: ClusterIP
+    type: NodePort
 
 ## Monitors ConfigMap changes and POSTs to a URL
 ## Ref: https://github.com/jimmidyson/configmap-reload
@@ -186,6 +187,10 @@ kubeStateMetrics:
     # requests:
     #   cpu: 10m
     #   memory: 16Mi
+
+  ## Prometheus kubeStateMetrics service account name for RBAC
+  ##
+  serviceAccountName: kube-state-metrics-service-account
 
   service:
     annotations:
@@ -280,6 +285,10 @@ server:
   ##
   name: server
 
+  ## Prometheus server service account name for RBAC
+  ##
+  serviceAccountName: prometheus-server-service-account
+
   ## Prometheus server container image
   ##
   image:
@@ -369,7 +378,7 @@ server:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    # storageClass: "-"
+    storageClass: "fast"
 
     ## Subdirectory of Prometheus server data Persistent Volume to mount
     ## Useful if the volume's root directory is not empty
@@ -407,7 +416,8 @@ server:
     loadBalancerIP: ""
     loadBalancerSourceRanges: []
     servicePort: 80
-    type: ClusterIP
+    #type: ClusterIP
+    type: NodePort
 
   ## Prometheus server pod termination grace period
   ##
