@@ -1,43 +1,22 @@
 apiVersion: v1
 entries:
-  alpine:
-  - created: 2016-11-18T15:05:51.078570269-07:00
-    description: Deploy a basic Alpine Linux pod
-    digest: f44f733d69008e86c3989d3b094a5e6151d168921a09eda61c0897472e2f0399
-    home: https://k8s.io/helm
-    name: alpine
+  prometheus:
+  - created: 2017-08-05T15:21:11.281430404-04:00
+    description: Prometheus is a monitoring system and time series database.
+    digest: fa932bd31410ad5351489eaa486851b34d46d987aaef50a6b07137297d025828
+    engine: gotpl
+    home: https://prometheus.io/
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    maintainers:
+    - email: mgoodness@gmail.com
+      name: Michael Goodness
+    name: prometheus
     sources:
-    - https://github.com/kubernetes/helm
+    - https://github.com/prometheus/alertmanager
+    - https://github.com/prometheus/prometheus
+    - https://github.com/prometheus/pushgateway
+    - https://github.com/kubernetes/kube-state-metrics
     urls:
-    - alpine-0.3.0.tgz
-    version: 0.3.0
-  - created: 2016-11-18T15:05:51.078096239-07:00
-    description: Deploy a basic Alpine Linux pod
-    digest: 99c76e403d752c84ead610644d4b1c2f2b453a74b921f422b9dcb8a7c8b559cd
-    home: https://k8s.io/helm
-    name: alpine
-    sources:
-    - https://github.com/kubernetes/helm
-    urls:
-    - alpine-0.2.0.tgz
-    version: 0.2.0
-  - created: 2016-11-18T15:05:51.077842565-07:00
-    description: Deploy a basic Alpine Linux pod
-    digest: 515c58e5f79d8b2913a10cb400ebb6fa9c77fe813287afbacf1a0b897cd78727
-    home: https://k8s.io/helm
-    name: alpine
-    sources:
-    - https://github.com/kubernetes/helm
-    urls:
-    - alpine-0.1.0.tgz
-    version: 0.1.0
-  mink:
-  - apiVersion: v1
-    created: 2016-11-18T15:05:51.079623125-07:00
-    description: A Helm chart for Kubernetes
-    digest: 28e300f4bd90e49efc8c53cb631ea25f817e1e35da4f8131298bf79a06b6ec21
-    name: mink
-    urls:
-    - mink-0.1.0.tgz
-    version: 0.1.0
-generated: 2016-11-18T15:05:51.077257234-07:00
+    - https://balajays.github.io/charts/docs/prometheus-4.1.0.tgz
+    version: 4.1.0
+generated: 2017-08-05T15:21:11.27911399-04:00
